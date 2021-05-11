@@ -1,0 +1,17 @@
+{
+  "name": "js-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.6.1",
+    "puppeteer": "^9.1.1"
+  }
+}
