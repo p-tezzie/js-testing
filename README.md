@@ -1,6 +1,6 @@
-# JS Testing
+# JS Testing Tutorial
 
-JavaScript testing examples: unit test, API test and UI test
+JavaScript testing tutorial: unit test, API test and UI test
 
 
 
@@ -57,5 +57,5 @@ node test/ui.test.js
 ## Run All Tests
 
 ```shell
-node test/index.js
+npm test
 ```

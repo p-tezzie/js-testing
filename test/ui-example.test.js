@@ -1,8 +1,18 @@
 const assert = require('assert')
 const puppeteer = require('puppeteer')
-const {TestBase} = require('../test/test-base')
 
-class UiTest extends TestBase {
+class UiTest {
+  async run () {
+    const tests = [
+      this.testHome,
+    ]
+
+    for (const test of tests) {
+      await test.call(this)
+      console.info(`PASS UiTest.${test.name}`)
+    }
+  }
+
   async testHome () {
     const browser = await puppeteer.launch({
       headless: false,
@@ -42,7 +52,7 @@ if (require.main === module) {
 
 async function main () {
   try {
-    await new UiTest().print()
+    await new UiTest().run()
   } catch (err) {
     console.error(err.message)
     console.debug(err.stack)

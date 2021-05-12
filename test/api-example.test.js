@@ -1,9 +1,19 @@
 const assert = require('assert')
 const querystring = require('querystring')
 const fetch = require('node-fetch')
-const {TestBase} = require('../test/test-base')
 
-class ApiTest extends TestBase {
+class ApiExampleTest {
+  async run () {
+    const tests = [
+      this.testApiAdd,
+    ]
+
+    for (const test of tests) {
+      await test.call(this)
+      console.info(`PASS ApiExampleTest.${test.name}`)
+    }
+  }
+
   async testApiAdd () {
     const search = '?' + querystring.stringify({
       operand1: 1,
@@ -29,11 +39,11 @@ if (require.main === module) {
 
 async function main () {
   try {
-    await new ApiTest().print()
+    await new ApiExampleTest().run()
   } catch (err) {
     console.error(err.message)
     console.debug(err.stack)
   }
 }
 
-module.exports.ApiTest = ApiTest
+module.exports.ApiExampleTest = ApiExampleTest

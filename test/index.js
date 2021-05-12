@@ -11,7 +11,7 @@ class Main {
     ]
 
     for (const testcase of testcases) {
-      await testcase.run()
+      await testcase.print()
     }
   }
 }
